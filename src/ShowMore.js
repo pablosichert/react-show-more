@@ -21,9 +21,11 @@ class ShowMore extends Component {
     }
 
     handleTruncate = truncated => {
-        this.setState({
-            truncated
-        });
+        if (truncated !== this.state.truncated) {
+            this.setState({
+                truncated
+            });
+        }
     }
 
     toggleLines = event => {
