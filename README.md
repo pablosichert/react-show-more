@@ -27,6 +27,7 @@ class Foo extends Component {
                 lines={3}
                 more='Show more'
                 less='Show less'
+                anchorClass=''
             >
                 {longText}
             </ShowMore>
@@ -42,6 +43,7 @@ class Foo extends Component {
 | children | string, React node | | The text to be truncated. Anything that can be evaluated as text. | `'Some text'`, `<p>Some paragraph <a/>with other text-based inline elements<a></p>`, `<span>Some</span><span>siblings</span>` |
 | more | string, React node | '…' | An ellipsis that is added to the end of the text in case it is truncated. | `'Show more'`, `<span>Show more</span>`
 | less | string, React node | '…' | A node that appended to the last line in case the user clicked "show more". | `'Show less'`, `<span>Show less</span>`
+| anchorClass | string | '' | Class name(s) to add to the anchor elements. | `'my-anchor-class'`, `'class-1 class-2'`
 
 ## Developing
 Install development dependencies
