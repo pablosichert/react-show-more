@@ -41,8 +41,8 @@ class Foo extends Component {
 | ---- | ---- | ------- | ----------- | ------- |
 | lines | integer, boolean {false} | 3 | Specifies how many lines of text should be preserved until it gets truncated. `false` and any integer < 1 will result in the text not getting clipped at all. | (`false`, `-1`, `0`), `1`, ...  |
 | children | string, React node | | The text to be truncated. Anything that can be evaluated as text. | `'Some text'`, `<p>Some paragraph <a/>with other text-based inline elements<a></p>`, `<span>Some</span><span>siblings</span>` |
-| more | string, React node | '…' | An ellipsis that is added to the end of the text in case it is truncated. | `'Show more'`, `<span>Show more</span>`
-| less | string, React node | '…' | A node that appended to the last line in case the user clicked "show more". | `'Show less'`, `<span>Show less</span>`
+| more | string, React node | 'Show more' | The text to display in the anchor element to show more. | `'Show more'`, `<span>Show more</span>`
+| less | string, React node | 'Show less' | The text to display in the anchor element to show less. | `'Show less'`, `<span>Show less</span>`
 | anchorClass | string | '' | Class name(s) to add to the anchor elements. | `'my-anchor-class'`, `'class-1 class-2'`
 
 ## Developing
