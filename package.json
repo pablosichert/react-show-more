@@ -50,11 +50,11 @@
     "eslint-config-onelint-react": "^2.0.1",
     "mocha": "^3.2.0",
     "nyc": "^10.1.2",
-    "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
     "unexpected": "^10.23.0",
-    "unexpected-react": "^3.4.0"
+    "unexpected-react": "^4.1.0"
   },
   "dependencies": {
     "react-truncate": "^2.0.5"
