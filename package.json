@@ -57,6 +57,7 @@
     "unexpected-react": "^3.4.0"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react-truncate": "^2.0.5"
   }
 }
