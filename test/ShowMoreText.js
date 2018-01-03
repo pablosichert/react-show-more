@@ -1,7 +1,6 @@
 import unexpected from 'unexpected';
 import unexpectedReact from 'unexpected-react';
-import React, { Component } from 'react';
-import { createRenderer } from 'react-addons-test-utils';
+import React from 'react';
 import ShowMoreText from '../src/ShowMoreText';
 
 const expect = unexpected.clone()
@@ -10,13 +9,7 @@ const expect = unexpected.clone()
 
 describe('<ShowMoreText />', () => {
     it('should be a React component', () => {
-        expect(ShowMoreText, 'to be a', Component.constructor);
+        expect(ShowMoreText, 'to be a', React.Component.constructor);
     });
-
-    it('should render a div', () => {
-        const renderer = createRenderer();
-        renderer.render(<ShowMoreText />);
-
-        expect(renderer, 'to have rendered', <div />);
-    });
+    
 });
