@@ -6,6 +6,7 @@
 [![Dependency status][david-dm-image]][david-dm-url]
 [![Dev dependency status][david-dm-dev-image]][david-dm-dev-url]
 
+The text surrounded by the component to be truncated. Anything could be evaluated as text.
 This is a convenience wrapper around [react-truncate](https://github.com/One-com/react-truncate).
 
 ## Install
