@@ -11,5 +11,4 @@ describe('<ShowMoreText />', () => {
     it('should be a React component', () => {
         expect(ShowMoreText, 'to be a', React.Component.constructor);
     });
-    
 });
