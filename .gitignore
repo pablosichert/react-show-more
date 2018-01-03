@@ -3,3 +3,4 @@ demo
 lib
 node_modules
 *.log
+/nbproject/private/

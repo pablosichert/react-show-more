@@ -10,19 +10,19 @@ This is a convenience wrapper around [react-truncate](https://github.com/One-com
 
 ## Install
 ```
-$ npm install react-show-more
+$ npm install react-show-more-text
 ```
 
 ## Usage
 ```js
-import ShowMore from 'react-show-more';
+import ShowMoreText from 'react-show-more-text';
 
 // ...
 
 class Foo extends Component {
     render() {
         return (
-            <ShowMore
+            <ShowMoreText
                 {* Default options *}
                 lines={3}
                 more='Show more'
@@ -30,7 +30,7 @@ class Foo extends Component {
                 anchorClass=''
             >
                 {longText}
-            </ShowMore>
+            </ShowMoreText>
         );
     }
 }
@@ -66,14 +66,14 @@ Compile to ES5 from /src to /lib
 $ npm run compile
 ```
 
-[npm-url]: https://npmjs.org/package/react-show-more
-[downloads-image]: http://img.shields.io/npm/dm/react-show-more.svg
-[npm-image]: https://badge.fury.io/js/react-show-more.svg
-[travis-url]: https://travis-ci.org/One-com/react-show-more
-[travis-image]: http://img.shields.io/travis/One-com/react-show-more.svg
-[coveralls-url]:https://coveralls.io/r/One-com/react-show-more
-[coveralls-image]:https://coveralls.io/repos/One-com/react-show-more/badge.svg
-[david-dm-url]:https://david-dm.org/One-com/react-show-more
-[david-dm-image]:https://david-dm.org/One-com/react-show-more.svg
-[david-dm-dev-url]:https://david-dm.org/One-com/react-show-more#info=devDependencies
-[david-dm-dev-image]:https://david-dm.org/One-com/react-show-more/dev-status.svg
+[npm-url]: https://npmjs.org/package/react-show-more-text
+[downloads-image]: http://img.shields.io/npm/dm/react-show-more-text.svg
+[npm-image]: https://badge.fury.io/js/react-show-more-text.svg
+[travis-url]: https://travis-ci.org/One-com/react-show-more-text
+[travis-image]: http://img.shields.io/travis/One-com/react-show-more-text.svg
+[coveralls-url]:https://coveralls.io/r/One-com/react-show-more-text
+[coveralls-image]:https://coveralls.io/repos/One-com/react-show-more-text/badge.svg
+[david-dm-url]:https://david-dm.org/One-com/react-show-more-text
+[david-dm-image]:https://david-dm.org/One-com/react-show-more-text.svg
+[david-dm-dev-url]:https://david-dm.org/One-com/react-show-more-text#info=devDependencies
+[david-dm-dev-image]:https://david-dm.org/One-com/react-show-more-text/dev-status.svg

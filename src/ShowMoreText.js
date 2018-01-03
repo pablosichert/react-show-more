@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Truncate from 'react-truncate';
 
-class ShowMore extends Component {
+class ShowMoreText extends Component {
     static defaultProps = {
         lines: 3,
         more: 'Show more',
@@ -71,4 +71,4 @@ class ShowMore extends Component {
     }
 }
 
-export default ShowMore;
+export default ShowMoreText;
