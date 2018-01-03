@@ -1,4 +1,4 @@
-# React Show More
+# React Show More Text
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
 [![Build status][travis-image]][travis-url]
@@ -6,8 +6,7 @@
 [![Dependency status][david-dm-image]][david-dm-url]
 [![Dev dependency status][david-dm-dev-image]][david-dm-dev-url]
 
-The text surrounded by the component to be truncated. Anything could be evaluated as text.
-This is a convenience wrapper around [react-truncate](https://github.com/One-com/react-truncate).
+The text surrounded by the component will be truncated. Anything surrounded by the component could be evaluated as text. The component react-show-more-text/ShowMoreText is fork of react-show-more/ShowMore, applied improvements, works with React 16.x.x, added onClick event.
 
 ## Install
 ```
@@ -21,6 +20,11 @@ import ShowMoreText from 'react-show-more-text';
 // ...
 
 class Foo extends Component {
+
+    executeOnClick(isExpanded) {
+        console.log(isExpanded);
+    }
+
     render() {
         return (
             <ShowMoreText
@@ -29,6 +33,7 @@ class Foo extends Component {
                 more='Show more'
                 less='Show less'
                 anchorClass=''
+                onClick={this.executeOnClick}
             >
                 {longText}
             </ShowMoreText>
@@ -45,6 +50,7 @@ class Foo extends Component {
 | more | string, React node | 'Show more' | The text to display in the anchor element to show more. | `'Show more'`, `<span>Show more</span>`
 | less | string, React node | 'Show less' | The text to display in the anchor element to show less. | `'Show less'`, `<span>Show less</span>`
 | anchorClass | string | '' | Class name(s) to add to the anchor elements. | `'my-anchor-class'`, `'class-1 class-2'`
+| onClick | Function | | Function executed on click on 'Show more' or 'Show less' | `onClick={this.executeOnClick}`
 
 ## Developing
 Install development dependencies

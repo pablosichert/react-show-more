@@ -7,7 +7,8 @@ class ShowMoreText extends Component {
         lines: 3,
         more: 'Show more',
         less: 'Show less',
-        anchorClass: ''
+        anchorClass: '',
+        onClick: undefined
     }
 
     static propTypes = {
@@ -15,7 +16,8 @@ class ShowMoreText extends Component {
         lines: PropTypes.number,
         more: PropTypes.node,
         less: PropTypes.node,
-        anchorClass: PropTypes.string
+        anchorClass: PropTypes.string,
+        onClick: PropTypes.func
     }
 
     state = {
@@ -33,9 +35,13 @@ class ShowMoreText extends Component {
 
     toggleLines = event => {
         event.preventDefault();
-
+        var _self = this;
         this.setState({
             expanded: !this.state.expanded
+        }, () => {
+            if (_self.props.onClick) {
+                _self.props.onClick(_self.state.expanded);
+            }
         });
     }
 
