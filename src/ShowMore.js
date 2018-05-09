@@ -5,9 +5,9 @@ import Truncate from "react-truncate";
 class ShowMore extends Component {
   static defaultProps = {
     lines: 3,
-    more: "Show more",
-    less: "Show less",
-    anchorClass: ""
+    more: 'Show more',
+    less: 'Show less',
+    anchorClass: ''
   };
 
   static propTypes = {

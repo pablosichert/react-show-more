@@ -1,5 +1,4 @@
 .nyc_output
 demo
-lib
 node_modules
 *.log
