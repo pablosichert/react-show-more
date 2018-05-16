@@ -1,7 +1,7 @@
 import unexpected from 'unexpected';
 import unexpectedReact from 'unexpected-react';
 import React, { Component } from 'react';
-import { createRenderer } from 'react-addons-test-utils';
+import { createRenderer } from 'react-test-renderer/shallow';
 import ShowMore from '../src/ShowMore';
 
 const expect = unexpected.clone()
