@@ -1059,10 +1059,6 @@ diff@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-1.4.0.tgz#7f28d2eb9ee7b15a97efd89ce63dcfdaa3ccbabf"
 
-diff@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/diff/-/diff-3.2.0.tgz#c9ce393a4b7cbd0b058a725c93df299027868ff9"
-
 doctrine@^1.2.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-1.5.0.tgz#379dce730f6166f76cefa4e6707a159b02c5a6fa"
@@ -1271,9 +1267,9 @@ fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
-fbjs@^0.8.1, fbjs@^0.8.4:
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.8.tgz#02f1b6e0ea0d46c24e0b51a2d24df069563a5ad6"
+fbjs@^0.8.16:
+  version "0.8.16"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
     core-js "^1.0.0"
     isomorphic-fetch "^2.1.1"
@@ -1492,7 +1488,7 @@ globby@^5.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6:
+graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
@@ -1826,50 +1822,6 @@ istanbul-reports@^1.0.0:
   dependencies:
     handlebars "^4.0.3"
 
-jest-diff@^18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-18.1.0.tgz#4ff79e74dd988c139195b365dc65d87f606f4803"
-  dependencies:
-    chalk "^1.1.3"
-    diff "^3.0.0"
-    jest-matcher-utils "^18.1.0"
-    pretty-format "^18.1.0"
-
-jest-file-exists@^17.0.0:
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/jest-file-exists/-/jest-file-exists-17.0.0.tgz#7f63eb73a1c43a13f461be261768b45af2cdd169"
-
-jest-matcher-utils@^18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-18.1.0.tgz#1ac4651955ee2a60cef1e7fcc98cdfd773c0f932"
-  dependencies:
-    chalk "^1.1.3"
-    pretty-format "^18.1.0"
-
-"jest-matchers@>=16.0.0 <19.0.0":
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/jest-matchers/-/jest-matchers-18.1.0.tgz#0341484bf87a1fd0bac0a4d2c899e2b77a3f1ead"
-  dependencies:
-    jest-diff "^18.1.0"
-    jest-matcher-utils "^18.1.0"
-    jest-util "^18.1.0"
-    pretty-format "^18.1.0"
-
-jest-mock@^18.0.0:
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-18.0.0.tgz#5c248846ea33fa558b526f5312ab4a6765e489b3"
-
-jest-util@^18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-18.1.0.tgz#3a99c32114ab17f84be094382527006e6d4bfc6a"
-  dependencies:
-    chalk "^1.1.1"
-    diff "^3.0.0"
-    graceful-fs "^4.1.6"
-    jest-file-exists "^17.0.0"
-    jest-mock "^18.0.0"
-    mkdirp "^0.5.1"
-
 jodid25519@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"
@@ -1884,9 +1836,9 @@ js-tokens@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.1.tgz#08e9f132484a2c45a30907e9dc4d5567b7f114d7"
 
-js-writer@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/js-writer/-/js-writer-1.1.0.tgz#7db97924bbacfc311d176b2401f2940a4006efc9"
+js-writer@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/js-writer/-/js-writer-1.3.0.tgz#c8a3ed8de1cde2c539fe0cf429991adcee7cd600"
 
 js-yaml@3.6.1, js-yaml@^3.5.1:
   version "3.6.1"
@@ -2054,6 +2006,12 @@ loose-envify@^1.0.0, loose-envify@^1.1.0:
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.0.tgz#6b26248c42f6d4fa4b0d8542f78edfcde35642a8"
   dependencies:
     js-tokens "^2.0.0"
+
+loose-envify@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
+  dependencies:
+    js-tokens "^3.0.0"
 
 lru-cache@^4.0.1:
   version "4.0.2"
@@ -2267,6 +2225,10 @@ object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
 
+object-assign@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
+
 object.omit@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/object.omit/-/object.omit-2.0.1.tgz#1a9c744829f39dbb858c76ca3579ae2a54ebd1fa"
@@ -2403,12 +2365,6 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-pretty-format@^18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-18.1.0.tgz#fb65a86f7a7f9194963eee91865c1bcf1039e284"
-  dependencies:
-    ansi-styles "^2.2.1"
-
 private@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.6.tgz#55c6a976d0f9bafb9924851350fe47b9b5fbb7c1"
@@ -2426,6 +2382,14 @@ promise@^7.1.1:
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.1.1.tgz#489654c692616b8aa55b0724fa809bb7db49c5bf"
   dependencies:
     asap "~2.0.3"
+
+prop-types@^15.5.10, prop-types@^15.6.0:
+  version "15.6.1"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
 
 pseudomap@^1.0.1:
   version "1.0.2"
@@ -2459,36 +2423,44 @@ rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
-react-addons-test-utils@^15.4.2:
-  version "15.4.2"
-  resolved "https://registry.yarnpkg.com/react-addons-test-utils/-/react-addons-test-utils-15.4.2.tgz#93bcaa718fcae7360d42e8fb1c09756cc36302a2"
+react-dom@^16.3.2:
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
   dependencies:
-    fbjs "^0.8.4"
-    object-assign "^4.1.0"
-
-react-dom@^15.4.2:
-  version "15.4.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
-  dependencies:
-    fbjs "^0.8.1"
+    fbjs "^0.8.16"
     loose-envify "^1.1.0"
-    object-assign "^4.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
-react-render-hook@^0.1.3:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/react-render-hook/-/react-render-hook-0.1.4.tgz#481ebf680919c03e71142ddce409f4e101f9bec4"
+react-is@^16.3.2:
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.2.tgz#f4d3d0e2f5fbb6ac46450641eb2e25bf05d36b22"
 
-react-truncate@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/react-truncate/-/react-truncate-2.0.5.tgz#a8307f022db05e6971c82992e55c41955c3986f8"
+react-render-hook@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-render-hook/-/react-render-hook-1.0.1.tgz#521582d3d59f4142204212a19fa2ff9563cf252b"
 
-react@^15.4.2:
-  version "15.4.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"
+react-test-renderer@^16.0.0:
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.3.2.tgz#3d1ed74fda8db42521fdf03328e933312214749a"
   dependencies:
-    fbjs "^0.8.4"
+    fbjs "^0.8.16"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+    react-is "^16.3.2"
+
+react-truncate@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-truncate/-/react-truncate-2.3.0.tgz#d469b355aff1f83ae9e0f2fed0d47dfd061e5d2e"
+
+react@^16.3.2:
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
+  dependencies:
+    fbjs "^0.8.16"
     loose-envify "^1.1.0"
-    object-assign "^4.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -3013,52 +2985,51 @@ unexpected-bluebird@2.9.34-longstack2:
   version "2.9.34-longstack2"
   resolved "https://registry.yarnpkg.com/unexpected-bluebird/-/unexpected-bluebird-2.9.34-longstack2.tgz#49acac753b0556ded6025210ee96182307d2b2c9"
 
-unexpected-htmllike-jsx-adapter@^1.0.1:
+unexpected-htmllike-jsx-adapter@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/unexpected-htmllike-jsx-adapter/-/unexpected-htmllike-jsx-adapter-1.0.3.tgz#298ae6386e3f53dc4c1b75f54da7f687450ce1a9"
+  dependencies:
+    object-assign "^4.0.1"
+
+unexpected-htmllike-raw-adapter@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/unexpected-htmllike-jsx-adapter/-/unexpected-htmllike-jsx-adapter-1.0.1.tgz#2377ac9076b6dc15f3662f4dd310120f0c2fbaa0"
+  resolved "https://registry.yarnpkg.com/unexpected-htmllike-raw-adapter/-/unexpected-htmllike-raw-adapter-1.0.1.tgz#d9fc7b8f324ce01102db322923b0cf971bb67420"
   dependencies:
     object-assign "^4.0.1"
 
-unexpected-htmllike-raw-adapter@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/unexpected-htmllike-raw-adapter/-/unexpected-htmllike-raw-adapter-1.0.0.tgz#7f6d182d1b6d39f67ffddbd0e69ec40b6b26ea98"
+unexpected-htmllike-reactrendered-adapter@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/unexpected-htmllike-reactrendered-adapter/-/unexpected-htmllike-reactrendered-adapter-3.0.2.tgz#44fca537e686c269a4b3735caaba8a2ea81eabc8"
+  dependencies:
+    object-assign "^4.0.1"
+    react-render-hook "^1.0.0"
+
+unexpected-htmllike-testrenderer-adapter@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/unexpected-htmllike-testrenderer-adapter/-/unexpected-htmllike-testrenderer-adapter-1.0.2.tgz#0227eef6e30a876328da20a8612f7cda48367919"
   dependencies:
     object-assign "^4.0.1"
 
-unexpected-htmllike-reactrendered-adapter@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/unexpected-htmllike-reactrendered-adapter/-/unexpected-htmllike-reactrendered-adapter-2.0.1.tgz#c9b3e597d9cbbdfeab171035836c6a7f2d8a48e5"
-  dependencies:
-    object-assign "^4.0.1"
-    react-render-hook "^0.1.3"
-
-unexpected-htmllike-testrenderer-adapter@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/unexpected-htmllike-testrenderer-adapter/-/unexpected-htmllike-testrenderer-adapter-1.0.0.tgz#ee99cd6334652a8db729c5ab7daef4f2dea1c7da"
-  dependencies:
-    object-assign "^4.0.1"
-
-unexpected-htmllike@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/unexpected-htmllike/-/unexpected-htmllike-2.1.2.tgz#d9c8a3a50207fd0303744e409e9f62b8663cf614"
+unexpected-htmllike@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/unexpected-htmllike/-/unexpected-htmllike-2.1.3.tgz#a9760704f0f3d11a5655d31e259b429fbfe8ac7d"
   dependencies:
     array-changes "^1.2.1"
     array-changes-async "^2.2.0"
     object-assign "^4.0.1"
 
-unexpected-react@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/unexpected-react/-/unexpected-react-3.4.0.tgz#de93adf05499a7becf960f36b8d7698a5efb41cf"
+unexpected-react@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/unexpected-react/-/unexpected-react-5.0.1.tgz#e60cea2bd1fdc9794a0f7cca29fc966a83fcfa3b"
   dependencies:
-    jest-matchers ">=16.0.0 <19.0.0"
-    js-writer "^1.1.0"
+    js-writer "^1.3.0"
     magicpen-prism "^2.2.1"
-    react-render-hook "^0.1.3"
-    unexpected-htmllike "^2.1.2"
-    unexpected-htmllike-jsx-adapter "^1.0.1"
-    unexpected-htmllike-raw-adapter "^1.0.0"
-    unexpected-htmllike-reactrendered-adapter "^2.0.1"
-    unexpected-htmllike-testrenderer-adapter "^1.0.0"
+    react-render-hook "^1.0.0"
+    unexpected-htmllike "^2.1.3"
+    unexpected-htmllike-jsx-adapter "^1.0.3"
+    unexpected-htmllike-raw-adapter "^1.0.1"
+    unexpected-htmllike-reactrendered-adapter "^3.0.2"
+    unexpected-htmllike-testrenderer-adapter "^1.0.2"
 
 unexpected@^10.23.0:
   version "10.23.0"
