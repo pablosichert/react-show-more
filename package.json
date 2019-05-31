@@ -50,21 +50,21 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "coveralls": "^3.0.0",
+    "coveralls": "^3.0.3",
     "eslint": "^4.14.0",
     "eslint-config-onelint": "^3.0.0",
     "eslint-config-onelint-react": "^2.0.1",
-    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-react": "^7.13.0",
     "mocha": "^4.1.0",
     "nyc": "^11.4.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-test-renderer": "^16.6.3",
-    "unexpected": "^10.39.2",
-    "unexpected-react": "^5.0.1"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "unexpected": "^10.40.2",
+    "unexpected-react": "^5.0.4"
   },
   "dependencies": {
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.7.2",
     "react-truncate": "^2.1.5"
   }
 }
