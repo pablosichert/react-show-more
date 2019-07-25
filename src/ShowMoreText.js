@@ -20,7 +20,7 @@ class ShowMoreText extends Component {
         less: PropTypes.node,
         anchorClass: PropTypes.string,
         onClick: PropTypes.func,
-        expanded: PropTypes.boolean
+        expanded: PropTypes.bool
     }
 
     componentDidMount() {
