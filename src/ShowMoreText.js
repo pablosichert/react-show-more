@@ -3,12 +3,14 @@ import { PropTypes } from 'prop-types';
 import Truncate from 'react-truncate';
 
 class ShowMoreText extends Component {
+
     static defaultProps = {
         lines: 3,
         more: 'Show more',
         less: 'Show less',
         anchorClass: '',
-        onClick: undefined
+        onClick: undefined,
+        expanded: false
     }
 
     static propTypes = {
@@ -17,7 +19,15 @@ class ShowMoreText extends Component {
         more: PropTypes.node,
         less: PropTypes.node,
         anchorClass: PropTypes.string,
-        onClick: PropTypes.func
+        onClick: PropTypes.func,
+        expanded: PropTypes.boolean
+    }
+
+    componentDidMount() {
+        var _self = this;
+        this.setState({
+            expanded: _self.props.expanded
+        });
     }
 
     state = {

@@ -54,6 +54,8 @@ class Foo extends Component {
 | less | string, React node | 'Show less' | The text to display in the anchor element to show less. | `'Show less'`, `<span>Show less</span>`
 | anchorClass | string | '' | Class name(s) to add to the anchor elements. | `'my-anchor-class'`, `'class-1 class-2'`
 | onClick | Function | | Function executed on click on 'Show more' or 'Show less' | `onClick={this.executeOnClick}`
+| expanded | boolean | 'false' | Control the text to be shown as expanded | `expanded={true}`
+
 
 ## Developing
 Install development dependencies

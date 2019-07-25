@@ -1,6 +1,6 @@
 {
   "name": "react-show-more-text",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The text surrounded by the component will be truncated. Anything surrounded by the component could be evaluated as text. The component react-show-more-text/ShowMoreText is fork of react-show-more/ShowMore, applied improvements, works with React 16.x.x, added onClick event.",
   "main": "lib/ShowMoreText.js",
   "files": [
@@ -50,11 +50,11 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "coveralls": "^3.0.3",
+    "coveralls": "^3.0.5",
     "eslint": "^4.14.0",
     "eslint-config-onelint": "^3.0.0",
     "eslint-config-onelint-react": "^2.0.1",
-    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react": "^7.14.3",
     "mocha": "^4.1.0",
     "nyc": "^11.4.1",
     "react": "^16.8.6",
