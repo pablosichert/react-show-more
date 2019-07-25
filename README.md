@@ -37,6 +37,7 @@ class Foo extends Component {
                 less='Show less'
                 anchorClass=''
                 onClick={this.executeOnClick}
+                expanded={false}
             >
                 {longText}
             </ShowMoreText>
