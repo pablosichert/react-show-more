@@ -10,7 +10,8 @@ class ShowMoreText extends Component {
         less: 'Show less',
         anchorClass: '',
         onClick: undefined,
-        expanded: false
+        expanded: false,
+        width: 0
     }
 
     static propTypes = {
@@ -20,7 +21,8 @@ class ShowMoreText extends Component {
         less: PropTypes.node,
         anchorClass: PropTypes.string,
         onClick: PropTypes.func,
-        expanded: PropTypes.bool
+        expanded: PropTypes.bool,
+        width: PropTypes.number
     }
 
     componentDidMount() {
@@ -61,7 +63,8 @@ class ShowMoreText extends Component {
             more,
             less,
             lines,
-            anchorClass
+            anchorClass,
+            width
         } = this.props;
 
         const {
@@ -72,6 +75,7 @@ class ShowMoreText extends Component {
         return (
             <div>
                 <Truncate
+                    width={width}
                     lines={!expanded && lines}
                     ellipsis={(
                         <span>... <a href='#' className={anchorClass} onClick={this.toggleLines}>{more}</a></span>
