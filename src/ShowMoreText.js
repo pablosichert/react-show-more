@@ -10,6 +10,7 @@ class ShowMoreText extends Component {
         anchorClass: '',
         onClick: undefined,
         expanded: false,
+        width: 0,
         keepNewLines: true
     };
 
@@ -21,6 +22,7 @@ class ShowMoreText extends Component {
         anchorClass: PropTypes.string,
         onClick: PropTypes.func,
         expanded: PropTypes.bool,
+        width: PropTypes.number,
         keepNewLines: PropTypes.bool
     };
 
@@ -66,6 +68,7 @@ class ShowMoreText extends Component {
             less,
             lines,
             anchorClass,
+            width,
             keepNewLines
         } = this.props;
 
@@ -74,6 +77,7 @@ class ShowMoreText extends Component {
         return (
             <div>
                 <Truncate
+                    width={width}
                     lines={!expanded && lines}
                     ellipsis={
                         <span>
