@@ -100,7 +100,7 @@ class ShowMoreText extends Component {
                             }
                         }
                         )
-                        : {children}
+                        : children
                     }
                 </Truncate>
                 {!truncated && expanded && (
