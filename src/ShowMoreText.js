@@ -3,25 +3,26 @@ import { PropTypes } from 'prop-types';
 import Truncate from 'react-truncate';
 
 class ShowMoreText extends Component {
-
     static defaultProps = {
         lines: 3,
         more: 'Show more',
         less: 'Show less',
         anchorClass: '',
         onClick: undefined,
-        expanded: false
-    }
+        expanded: false,
+        keepNewLines: true
+    };
 
     static propTypes = {
-        children: PropTypes.node,
+        children: PropTypes.string,
         lines: PropTypes.number,
         more: PropTypes.node,
         less: PropTypes.node,
         anchorClass: PropTypes.string,
         onClick: PropTypes.func,
-        expanded: PropTypes.bool
-    }
+        expanded: PropTypes.bool,
+        keepNewLines: PropTypes.bool
+    };
 
     componentDidMount() {
         var _self = this;
@@ -33,7 +34,7 @@ class ShowMoreText extends Component {
     state = {
         expanded: false,
         truncated: false
-    }
+    };
 
     handleTruncate = truncated => {
         if (truncated !== this.state.truncated) {
@@ -41,19 +42,22 @@ class ShowMoreText extends Component {
                 truncated
             });
         }
-    }
+    };
 
     toggleLines = event => {
         event.preventDefault();
         var _self = this;
-        this.setState({
-            expanded: !this.state.expanded
-        }, () => {
-            if (_self.props.onClick) {
-                _self.props.onClick(_self.state.expanded);
+        this.setState(
+            {
+                expanded: !this.state.expanded
+            },
+            () => {
+                if (_self.props.onClick) {
+                    _self.props.onClick(_self.state.expanded);
+                }
             }
-        });
-    }
+        );
+    };
 
     render() {
         const {
@@ -61,27 +65,55 @@ class ShowMoreText extends Component {
             more,
             less,
             lines,
-            anchorClass
+            anchorClass,
+            keepNewLines
         } = this.props;
 
-        const {
-            expanded,
-            truncated
-        } = this.state;
+        const { expanded, truncated } = this.state;
 
         return (
             <div>
                 <Truncate
                     lines={!expanded && lines}
-                    ellipsis={(
-                        <span>... <a href='#' className={anchorClass} onClick={this.toggleLines}>{more}</a></span>
-                    )}
+                    ellipsis={
+                        <span>
+                            ...{' '}
+                            <a
+                                href='#'
+                                className={anchorClass}
+                                onClick={this.toggleLines}
+                            >
+                                {more}
+                            </a>
+                        </span>
+                    }
                     onTruncate={this.handleTruncate}
                 >
-                    {children}
+                    {keepNewLines ?
+                        children.split('\n').map((line, i, arr) => {
+                            line = <span key={i}>{line}</span>;
+
+                            if (i === arr.length - 1) {
+                                return line;
+                            } else {
+                                return [line, <br key={i + 'br'} />];
+                            }
+                        }
+                        )
+                        : {children}
+                    }
                 </Truncate>
                 {!truncated && expanded && (
-                    <span> <a href='#' className={anchorClass} onClick={this.toggleLines}>{less}</a></span>
+                    <span>
+                        {' '}
+                        <a
+                            href='#'
+                            className={anchorClass}
+                            onClick={this.toggleLines}
+                        >
+                            {less}
+                        </a>
+                    </span>
                 )}
             </div>
         );

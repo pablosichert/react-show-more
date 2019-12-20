@@ -31,7 +31,7 @@ class Foo extends Component {
     render() {
         return (
             <ShowMoreText
-                {* Default options *}
+                /* Default options */
                 lines={3}
                 more='Show more'
                 less='Show less'
@@ -56,6 +56,7 @@ class Foo extends Component {
 | anchorClass | string | '' | Class name(s) to add to the anchor elements. | `'my-anchor-class'`, `'class-1 class-2'`
 | onClick | Function | | Function executed on click on 'Show more' or 'Show less' | `onClick={this.executeOnClick}`
 | expanded | boolean | 'false' | Control the text to be shown as expanded | `expanded={true}`
+| keepNewLines | boolean | 'true' | Controls the new lines in text to be keept or not. If the new lines should be keept, you need to pass the text as Template literal [more info](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals). | `keepNewLines={true}`
 
 
 ## Developing
