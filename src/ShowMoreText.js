@@ -15,7 +15,7 @@ class ShowMoreText extends Component {
     };
 
     static propTypes = {
-        children: PropTypes.string,
+        children: PropTypes.node,
         lines: PropTypes.number,
         more: PropTypes.node,
         less: PropTypes.node,
