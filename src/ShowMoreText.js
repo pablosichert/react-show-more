@@ -11,7 +11,7 @@ class ShowMoreText extends Component {
         onClick: undefined,
         expanded: false,
         width: 0,
-        keepNewLines: true
+        keepNewLines: false
     };
 
     static propTypes = {
