@@ -11,11 +11,11 @@ class ShowMoreText extends Component {
         onClick: undefined,
         expanded: false,
         width: 0,
-        keepNewLines: true
+        keepNewLines: false
     };
 
     static propTypes = {
-        children: PropTypes.string,
+        children: PropTypes.node,
         lines: PropTypes.number,
         more: PropTypes.node,
         less: PropTypes.node,
