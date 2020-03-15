@@ -43,6 +43,7 @@ class ShowMoreText extends Component {
             this.setState({
                 truncated
             });
+            if (truncated) this.truncateRef.onResize()
         }
     };
 
@@ -92,6 +93,7 @@ class ShowMoreText extends Component {
                         </span>
                     }
                     onTruncate={this.handleTruncate}
+                    ref={ref => (this.truncateRef = ref)}
                 >
                     {keepNewLines ?
                         children.split('\n').map((line, i, arr) => {
