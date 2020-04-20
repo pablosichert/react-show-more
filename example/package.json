@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "^3.3.0",
-    "react-show-more-text": "^1.3.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.0",
+    "react-show-more-text": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,6 +30,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-export-default-from": "^7.5.2"
+    "@babel/plugin-proposal-export-default-from": "^7.8.3"
   }
 }

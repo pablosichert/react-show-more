@@ -1,1 +1,7 @@
 example/
+src/
+.babelrc
+.eslintrc
+.gitignore
+.watchmanconfig
+jest.config.js

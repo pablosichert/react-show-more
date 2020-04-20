@@ -1,13 +1,9 @@
 {
     "presets": [
-        "env",
-        "react"
+        "@babel/preset-react",
+        "@babel/preset-env"
     ],
     "plugins": [
-        "add-module-exports",
-        "syntax-async-functions",
-        "transform-class-properties",
-        "transform-object-rest-spread",
-        "transform-regenerator"
+        "@babel/plugin-proposal-class-properties"
     ]
 }

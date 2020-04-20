@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import Truncate from 'react-truncate';
 
 class ShowMoreText extends Component {
+    
     static defaultProps = {
         lines: 3,
         more: 'Show more',
@@ -43,7 +44,7 @@ class ShowMoreText extends Component {
             this.setState({
                 truncated
             });
-            if (truncated) this.truncateRef.onResize()
+            if (truncated) { this.truncateRef.onResize(); }
         }
     };
 

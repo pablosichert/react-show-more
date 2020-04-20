@@ -1,10 +1,13 @@
 {
-    parser: 'babel-eslint',
-    extends: [
-        'onelint',
-        'onelint-react'
-    ],
-    rules: {
-        'prefer-const': 'error'
+    "parser": "babel-eslint",
+    "extends": ["onelint", "onelint-react"],
+    "rules": {
+        "prefer-const": "error",
+    },
+    "settings": {
+        "react": {
+            "pragma": "React", // Pragma to use, default to 'React'
+            "version": "detect" // React version.
+        }
     }
 }
