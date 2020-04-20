@@ -30,13 +30,6 @@ export default class Truncate extends Component {
         super(...args);
 
         this.elements = {};
-
-        this.onResize = this.onResize.bind(this);
-        this.onTruncate = this.onTruncate.bind(this);
-        this.calcTargetWidth = this.calcTargetWidth.bind(this);
-        this.measureWidth = this.measureWidth.bind(this);
-        this.getLines = this.getLines.bind(this);
-        this.renderLine = this.renderLine.bind(this);
     }
 
     componentDidMount() {
@@ -90,7 +83,7 @@ export default class Truncate extends Component {
     }
 
     // Shim innerText to consistently break lines at <br/> but not at \n
-    innerText(node) {
+    innerText = (node) => {
         const div = document.createElement('div');
         const contentKey = 'innerText' in window.HTMLElement.prototype ? 'innerText' : 'textContent';
 
@@ -109,11 +102,11 @@ export default class Truncate extends Component {
         return text;
     }
 
-    onResize() {
+    onResize = () => {
         this.calcTargetWidth();
     }
 
-    onTruncate(didTruncate) {
+    onTruncate = (didTruncate) => {
         const {
             onTruncate
         } = this.props;
@@ -125,7 +118,7 @@ export default class Truncate extends Component {
         }
     }
 
-    calcTargetWidth(callback) {
+    calcTargetWidth = (callback) => {
         const {
             elements: {
                 target
@@ -170,19 +163,19 @@ export default class Truncate extends Component {
         }, callback);
     }
 
-    measureWidth(text) {
+    measureWidth = (text) => {
         return this.canvasContext.measureText(text).width;
     }
 
-    ellipsisWidth(node) {
+    ellipsisWidth = (node) => {
         return node.offsetWidth;
     }
 
-    trimRight(text) {
+    trimRight = (text) => {
         return text.replace(/\s+$/, '');
     }
 
-    getLines() {
+    getLines = () => {
         const {
             elements,
             props: {
@@ -297,7 +290,7 @@ export default class Truncate extends Component {
         return lines;
     }
 
-    renderLine(line, i, arr) {
+    renderLine = (line, i, arr) => {
         if (i === arr.length - 1) {
             return <span key={i}>{line}</span>;
         } else {
