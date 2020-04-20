@@ -64,8 +64,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
-    "prop-types": "^15.7.2",
-    "react-truncate": "^2.1.5"
+    "prop-types": "^15.7.2"
   },
   "browserslist": "> 0.25%, not dead"
 }
