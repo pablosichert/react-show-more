@@ -30,6 +30,7 @@ export default class Truncate extends Component {
         super(...args);
 
         this.elements = {};
+        this.replacedLinks = [];
     }
 
     componentDidMount() {
@@ -82,12 +83,39 @@ export default class Truncate extends Component {
         window.cancelAnimationFrame(timeout);
     }
 
+    extractReplaceLinksKeys = (content) => {
+        var _self = this, i = 0;
+        this.replacedLinks = [];
+
+        // TODO: Impreve regex to match anchors with attributes
+        content.replace(/[^<]*(<a href="([^"]+)">([^<]+)<\/a>)/g, function () {
+            const item = Array.prototype.slice.call(arguments, 1, 4);
+            item.key = '@'.repeat(item[2].length - 1) + '=' + i++;
+            _self.replacedLinks.push(item);
+
+            content = content.replace(item[0], item.key);
+        });
+
+        return content;
+    }
+
+    restoreReplacedLinks = (content) => {
+        this.replacedLinks.forEach(item => {
+            content = content.replace(item.key, item[0]);
+        });
+
+        content = this.createMarkup(content);
+
+        return content;
+    }
+
     // Shim innerText to consistently break lines at <br/> but not at \n
     innerText = (node) => {
         const div = document.createElement('div');
         const contentKey = 'innerText' in window.HTMLElement.prototype ? 'innerText' : 'textContent';
 
-        div.innerHTML = node.innerHTML.replace(/\r\n|\r|\n/g, ' ');
+        const content = node.innerHTML.replace(/\r\n|\r|\n/g, ' ');
+        div.innerHTML = this.extractReplaceLinksKeys(content);
 
         let text = div[contentKey];
 
@@ -175,6 +203,10 @@ export default class Truncate extends Component {
         return text.replace(/\s+$/, '');
     }
 
+    createMarkup = (str) => {
+        return <span dangerouslySetInnerHTML={{__html: str}} />;
+    }
+
     getLines = () => {
         const {
             elements,
@@ -189,7 +221,9 @@ export default class Truncate extends Component {
             innerText,
             measureWidth,
             onTruncate,
-            trimRight
+            trimRight,
+            renderLine,
+            restoreReplacedLinks
         } = this;
 
         const lines = [];
@@ -253,6 +287,8 @@ export default class Truncate extends Component {
                     }
                 }
 
+                lastLineText = restoreReplacedLinks(lastLineText);
+
                 resultLine = <span>{lastLineText}{ellipsis}</span>;
             } else {
                 // Binary search determining when the line breaks
@@ -279,6 +315,9 @@ export default class Truncate extends Component {
                 }
 
                 resultLine = textWords.slice(0, lower).join(' ');
+
+                resultLine = restoreReplacedLinks(resultLine);
+
                 textLines[0].splice(0, lower);
             }
 
@@ -287,7 +326,7 @@ export default class Truncate extends Component {
 
         onTruncate(didTruncate);
 
-        return lines;
+        return lines.map(renderLine);
     }
 
     renderLine = (line, i, arr) => {
@@ -322,7 +361,6 @@ export default class Truncate extends Component {
                 targetWidth
             },
             getLines,
-            renderLine,
             onTruncate
         } = this;
 
@@ -332,7 +370,7 @@ export default class Truncate extends Component {
 
         if (typeof window !== 'undefined' && mounted) {
             if (lines > 0) {
-                text = getLines().map(renderLine);
+                text = getLines();
             } else {
                 text = children;
 

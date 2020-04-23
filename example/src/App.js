@@ -27,15 +27,9 @@ export default class App extends React.Component {
                     onClick={this.executeOnClick}
                     expanded={false}
                 >
-                    {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit, sed do eiusmod tempor
-
-
-
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    Lorem ipsum dolor sit amet, consectetur <a href="https://www.yahoo.com/">yahoo.com</a> adipiscing elit, sed
+                    do eiusmod tempor incididunt <a href="https://www.google.bg/">www.google.bg</a> ut labore et dolore magna
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -90,7 +84,7 @@ export default class App extends React.Component {
                     ut aliquip ex Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex`}
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex
                 </ShowMoreText>
             </div>
         );
