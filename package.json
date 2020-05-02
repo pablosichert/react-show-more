@@ -7,7 +7,7 @@
     "lib"
   ],
   "scripts": {
-    "compile": "./node_modules/.bin/babel src --out-dir lib",
+    "compile": "./node_modules/.bin/babel src/ShowMoreText.js src/Truncate.js --out-dir lib",
     "compile:watch": "onchange \"src/**/*.js\" -- npm run compile --silent",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov",
     "lint": "eslint .",
