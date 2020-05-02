@@ -27,10 +27,10 @@ export default class App extends React.Component {
                     onClick={this.executeOnClick}
                     expanded={false}
                 >
-                    <p>Lorem ipsum dolor sit amet, consectetur <a href="https://www.yahoo.com/" target="_blank">yahoo.com</a> adipiscing elit, sed do eiusmod tempor incididunt 
+                    <p>Lorem ipsum dolor sit amet, consectetur <a href="https://www.yahoo.com/" rel="noopener noreferrer" target="_blank">yahoo.com</a> adipiscing elit, sed do eiusmod tempor incididunt 
                     ut labore et dolore magna amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, <a href="https://www.google.bg/" title="Google" rel="nofollow" target="_blank">www.google.bg</a> quis nostrud exercitation ullamco laboris nisi
+                    minim veniam, <a href="https://www.google.bg/" title="Google" rel="nofollow" rel="noopener noreferrer" target="_blank">www.google.bg</a> quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
 
