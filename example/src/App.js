@@ -21,39 +21,39 @@ export default class App extends React.Component {
                 <ShowMoreText
                     /* Default options */
                     lines={3}
-                    more="Show more"
-                    less="Show less" 
-                    anchorClass=""
+                    more='Show more'
+                    less='Show less'
+                    anchorClass=''
                     onClick={this.executeOnClick}
                     expanded={false}
                 >
-                    Lorem ipsum dolor sit amet, consectetur <a href="https://www.yahoo.com/">yahoo.com</a> adipiscing elit, sed
-                    do eiusmod tempor incididunt <a href="https://www.google.bg/">www.google.bg</a> ut labore et dolore magna
-                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    <p>Lorem ipsum dolor sit amet, consectetur <a href="https://www.yahoo.com/" target="_blank">yahoo.com</a> adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, <a href="https://www.google.bg/" title="Google" rel="nofollow" target="_blank">www.google.bg</a> quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
 
 
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    <p>et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 
 
-                    ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit
+                    <p>ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit
                     amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex Lorem ipsum dolor sit amet, consectetur
+                    ut aliquip ex Lorem ipsum dolor sit amet, consectetur</p>
 
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    <p>adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
                     
-                    do eiusmod tempor incididunt ut labore et dolore magna
+                    <p>do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit
                     amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -84,7 +84,7 @@ export default class App extends React.Component {
                     ut aliquip ex Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex</p>
                 </ShowMoreText>
             </div>
         );
