@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.4.2] - 2020-04-02
+### Changed
+- State update on unmounted component #14
+- HTML tags for hyperlinks disabled when show-less #11
+- Automated unit tests added in ShowMoreText.test.js file
+- README file updated
+- Improved example application
 
 ## [1.3.0] - 2019-12-20
 ### Changed
