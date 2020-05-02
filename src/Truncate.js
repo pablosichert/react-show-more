@@ -1,9 +1,26 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+/**
+ * LICENSE
+ * https://github.com/pablosichert/react-truncate/blob/master/LICENSE.md
+ *
+ * ISC License
+Copyright (c) 2016, One.com
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is
+hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE
+INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE
+FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
+DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
 
 // Initial version of react-truncate module (v2.4.0)
 
-export default class Truncate extends Component {
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default class Truncate extends React.Component {
     static propTypes = {
         children: PropTypes.node,
         ellipsis: PropTypes.node,
@@ -87,8 +104,7 @@ export default class Truncate extends Component {
         var _self = this, i = 0;
         this.replacedLinks = [];
 
-        // TODO: Impreve regex to match anchors with attributes
-        content.replace(/[^<]*(<a href="([^"]+)">([^<]+)<\/a>)/g, function () {
+        content.replace(/(<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>)/g, function () {
             const item = Array.prototype.slice.call(arguments, 1, 4);
             item.key = '@'.repeat(item[2].length - 1) + '=' + i++;
             _self.replacedLinks.push(item);
