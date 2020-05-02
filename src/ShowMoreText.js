@@ -3,7 +3,18 @@ import { PropTypes } from 'prop-types';
 import Truncate from './Truncate';
 
 class ShowMoreText extends Component {
-    
+
+    _isMounted = false;
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            expanded: false,
+            truncated: false
+        };
+    }
+
     static defaultProps = {
         lines: 3,
         more: 'Show more',
@@ -28,19 +39,22 @@ class ShowMoreText extends Component {
     };
 
     componentDidMount() {
+        this._isMounted = true;
+
         var _self = this;
-        this.setState({
-            expanded: _self.props.expanded
-        });
+        if (this._isMounted) {
+            this.setState({
+                expanded: _self.props.expanded
+            });
+        }
     }
 
-    state = {
-        expanded: false,
-        truncated: false
-    };
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
 
     handleTruncate = truncated => {
-        if (truncated !== this.state.truncated) {
+        if (this._isMounted && truncated !== this.state.truncated) {
             this.setState({
                 truncated
             });
@@ -51,16 +65,18 @@ class ShowMoreText extends Component {
     toggleLines = event => {
         event.preventDefault();
         var _self = this;
-        this.setState(
-            {
-                expanded: !this.state.expanded
-            },
-            () => {
-                if (_self.props.onClick) {
-                    _self.props.onClick(_self.state.expanded);
+        if (this._isMounted) {
+            this.setState(
+                {
+                    expanded: !this.state.expanded
+                },
+                () => {
+                    if (_self.props.onClick) {
+                        _self.props.onClick(_self.state.expanded);
+                    }
                 }
-            }
-        );
+            );
+        }
     };
 
     render() {
