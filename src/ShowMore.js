@@ -7,7 +7,8 @@ class ShowMore extends Component {
         lines: 3,
         more: 'Show more',
         less: 'Show less',
-        anchorClass: ''
+        anchorClass: '',
+        width: 0
     }
 
     static propTypes = {

@@ -44,6 +44,7 @@ class Foo extends Component {
 | more | string, React node | 'Show more' | The text to display in the anchor element to show more. | `'Show more'`, `<span>Show more</span>`
 | less | string, React node | 'Show less' | The text to display in the anchor element to show less. | `'Show less'`, `<span>Show less</span>`
 | anchorClass | string | '' | Class name(s) to add to the anchor elements. | `'my-anchor-class'`, `'class-1 class-2'`
+| width | number | 0 | If not 0, the calculation of the content will be based on this number. | ``
 
 ## Developing
 Install development dependencies
