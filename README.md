@@ -96,13 +96,13 @@ $ npm run compile
 [downloads-image]: http://img.shields.io/npm/dm/react-show-more-text.svg
 [npm-image]: https://badge.fury.io/js/react-show-more-text.svg
 
-[travis-url]: https://travis-ci.com/antares-code/react-show-more-text
-[travis-image]: https://travis-ci.com/antares-code/react-show-more-text.svg?branch=master
+[travis-url]: https://travis-ci.com/devzonetech/react-show-more-text
+[travis-image]: https://travis-ci.com/devzonetech/react-show-more-text.svg?branch=master
 
-[coveralls-url]:https://coveralls.io/github/antares-code/react-show-more-text?branch=master
-[coveralls-image]:https://coveralls.io/repos/github/antares-code/react-show-more-text/badge.svg?branch=master
+[coveralls-url]:https://coveralls.io/github/devzonetech/react-show-more-text?branch=master
+[coveralls-image]:https://coveralls.io/repos/github/devzonetech/react-show-more-text/badge.svg?branch=master
               
-[david-dm-url]:https://david-dm.org/antares-code/react-show-more-text
-[david-dm-image]:https://david-dm.org/antares-code/react-show-more-text.svg
-[david-dm-dev-url]:https://david-dm.org/antares-code/react-show-more-text#info=devDependencies
-[david-dm-dev-image]:https://david-dm.org/antares-code/react-show-more-text/dev-status.svg
+[david-dm-url]:https://david-dm.org/devzonetech/react-show-more-text
+[david-dm-image]:https://david-dm.org/devzonetech/react-show-more-text.svg
+[david-dm-dev-url]:https://david-dm.org/devzonetech/react-show-more-text#info=devDependencies
+[david-dm-dev-image]:https://david-dm.org/devzonetech/react-show-more-text/dev-status.svg
