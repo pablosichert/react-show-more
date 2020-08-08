@@ -14,7 +14,8 @@
     "prepublish": "rm -rf ./lib && npm run compile",
     "preversion": "npm run test",
     "report-coverage": "npm run coverage | coveralls",
-    "test": "./node_modules/.bin/jest --watch",
+    "test": "./node_modules/.bin/jest",
+    "test:watch": "./node_modules/.bin/jest --watch",
     "travis": "npm run compile && npm run test"
   },
   "repository": {
