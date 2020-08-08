@@ -120,9 +120,7 @@ export default class Truncate extends React.Component {
             content = content.replace(item.key, item[0]);
         });
 
-        content = this.createMarkup(content);
-
-        return content;
+        return this.createMarkup(content);
     }
 
     // Shim innerText to consistently break lines at <br/> but not at \n
@@ -266,7 +264,9 @@ export default class Truncate extends React.Component {
                     // Line is end of text and fits without truncating
                     didTruncate = false;
 
+                    resultLine = restoreReplacedLinks(resultLine);
                     lines.push(resultLine);
+
                     break;
                 }
             }
