@@ -15,7 +15,7 @@
     "preversion": "npm run test",
     "report-coverage": "npm run coverage | coveralls",
     "test": "jest --watch",
-    "travis": "npm run lint && npm run compile && npm run test"
+    "travis": "npm run compile && npm run test"
   },
   "repository": {
     "type": "git",
