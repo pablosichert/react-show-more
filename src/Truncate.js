@@ -106,7 +106,7 @@ export default class Truncate extends React.Component {
 
         content.replace(/(<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>)/g, function () {
             const item = Array.prototype.slice.call(arguments, 1, 4);
-            item.key = '@'.repeat(item[2].length - 1) + '=' + i++;
+            item.key = '[' + '@'.repeat(item[2].length - 1) + '=' + i++ + ']';
             _self.replacedLinks.push(item);
 
             content = content.replace(item[0], item.key);
@@ -302,6 +302,10 @@ export default class Truncate extends React.Component {
                         lastLineText = trimRight(prevLine);
                     }
                 }
+
+                if (lastLineText.substr(lastLineText.length - 2) === '][') {
+                    lastLineText = lastLineText.substring(0, lastLineText.length - 1);
+                };
 
                 lastLineText = restoreReplacedLinks(lastLineText);
 

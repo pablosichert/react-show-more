@@ -2,7 +2,6 @@
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
 [![Build status][travis-image]][travis-url]
-[![Coverage status][coveralls-image]][coveralls-url]
 [![Dependency status][david-dm-image]][david-dm-url]
 [![Dev dependency status][david-dm-dev-image]][david-dm-dev-url]
 
@@ -98,10 +97,7 @@ $ npm run compile
 
 [travis-url]: https://travis-ci.com/devzonetech/react-show-more-text
 [travis-image]: https://travis-ci.com/devzonetech/react-show-more-text.svg?branch=master
-
-[coveralls-url]:https://coveralls.io/github/devzonetech/react-show-more-text?branch=master
-[coveralls-image]:https://coveralls.io/repos/github/devzonetech/react-show-more-text/badge.svg?branch=master
-              
+             
 [david-dm-url]:https://david-dm.org/devzonetech/react-show-more-text
 [david-dm-image]:https://david-dm.org/devzonetech/react-show-more-text.svg
 [david-dm-dev-url]:https://david-dm.org/devzonetech/react-show-more-text#info=devDependencies

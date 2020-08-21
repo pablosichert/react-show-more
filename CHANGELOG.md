@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.4.4] - 2020-08-21
+### Fixed
+- [#16](https://github.com/devzonetech/react-show-more-text/issues/16) @ showing at the end of the line
+
 ## [1.4.3] - 2020-08-08
 ### Fixed
 - [#18](https://github.com/devzonetech/react-show-more-text/issues/18) Missing links, when the content surrounded by the component contains only one line
