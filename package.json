@@ -1,6 +1,6 @@
 {
   "name": "react-show-more-text",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "The text surrounded by the component will be truncated. Anything surrounded by the component could be evaluated as text. The component react-show-more-text/ShowMoreText is fork of react-show-more/ShowMore, applied improvements, works with React 16.x.x, added onClick event.",
   "main": "lib/ShowMoreText.js",
   "files": [
@@ -41,32 +41,32 @@
     "react": ">= 16.x.x"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
     "babel-eslint": "^10.1.0",
     "babel-preset-minify": "^0.5.1",
     "canvas": "^2.6.1",
     "core-js": "^3.6.5",
     "coveralls": "^3.0.7",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^4.14.0",
     "eslint-config-onelint": "^3.0.0",
     "eslint-config-onelint-react": "^2.0.1",
-    "eslint-plugin-jest": "^23.8.2",
-    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-react": "^7.21.5",
     "jest": "^25.3.0",
     "jest-enzyme": "^7.1.2",
     "nyc": "^14.1.1",
     "onchange": "^6.1.1",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.7",
+    "@babel/polyfill": "^7.12.1",
     "prop-types": "^15.7.2"
   },
   "browserslist": "> 0.25%, not dead"

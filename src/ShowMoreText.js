@@ -32,6 +32,7 @@ class ShowMoreText extends Component {
         more: PropTypes.node,
         less: PropTypes.node,
         anchorClass: PropTypes.string,
+        className: PropTypes.string,
         onClick: PropTypes.func,
         expanded: PropTypes.bool,
         width: PropTypes.number,
@@ -86,6 +87,7 @@ class ShowMoreText extends Component {
             less,
             lines,
             anchorClass,
+            className,
             width,
             keepNewLines
         } = this.props;
@@ -93,7 +95,7 @@ class ShowMoreText extends Component {
         const { expanded, truncated } = this.state;
 
         return (
-            <div>
+            <div className={className}>
                 <Truncate
                     width={width}
                     lines={!expanded && lines}

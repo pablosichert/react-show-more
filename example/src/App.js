@@ -23,11 +23,12 @@ export default class App extends React.Component {
                     lines={3}
                     more='Show more'
                     less='Show less'
-                    anchorClass=''
+                    anchorClass='example_css_class'
+                    className='example_css_class'
                     onClick={this.executeOnClick}
                     expanded={false}
                 >
-                    <p>Lorem ipsum dolor sit amet, consectetur <a href="https://www.yahoo.com/" rel="noopener noreferrer" target="_blank">yahoo.com</a> adipiscing elit, sed do eiusmod tempor incididunt 
+                    <p>Lorem ipsum dolor sit amet, consectetur <a href="https://www.yahoo.com/" class="my_css_class" rel="noopener noreferrer" target="_blank">yahoo.com</a> adipiscing elit, sed do eiusmod tempor incididunt 
                     ut labore et dolore magna amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                     minim veniam, <a href="https://www.google.bg/" title="Google" rel="nofollow" rel="noopener noreferrer" target="_blank">www.google.bg</a> quis nostrud exercitation ullamco laboris nisi

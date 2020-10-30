@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.4.5] - 2020-10-20
+### Fixed
+- [#12](https://github.com/devzonetech/react-show-more-text/issues/12) className for the wrapper div of component content
+
 ## [1.4.4] - 2020-08-21
 ### Fixed
 - [#16](https://github.com/devzonetech/react-show-more-text/issues/16) @ showing at the end of the line

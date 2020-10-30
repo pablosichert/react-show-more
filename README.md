@@ -3,7 +3,6 @@
 [![Downloads][downloads-image]][npm-url]
 [![Build status][travis-image]][travis-url]
 [![Dependency status][david-dm-image]][david-dm-url]
-[![Dev dependency status][david-dm-dev-image]][david-dm-dev-url]
 
 The text surrounded by the component will be truncated. Anything surrounded by the component could be evaluated as text. The component react-show-more-text/ShowMoreText is fork of react-show-more/ShowMore, applied improvements, works with React 16.x.x, added onClick event.
 
@@ -34,7 +33,8 @@ class Foo extends Component {
                 lines={3}
                 more='Show more'
                 less='Show less'
-                anchorClass=''
+                className='content-css'
+                anchorClass='my-anchor-css-class'
                 onClick={this.executeOnClick}
                 expanded={false}
                 width={280}
@@ -64,6 +64,7 @@ class Foo extends Component {
 | children | string, React node | | The text to be truncated. Anything that can be evaluated as text. | `'Some text'`, `<p>Some paragraph <a/>with other text-based inline elements<a></p>`, `<span>Some</span><span>siblings</span>` |
 | more | string, React node | 'Show more' | The text to display in the anchor element to show more. | `'Show more'`, `<span>Show more</span>`
 | less | string, React node | 'Show less' | The text to display in the anchor element to show less. | `'Show less'`, `<span>Show less</span>`
+| className | string | '' | Class name(s) to add on component content wrapper div. | `'wrapper-class'`, `'wrapper-class-1 wrapper-class-2'`
 | anchorClass | string | '' | Class name(s) to add to the anchor elements. | `'my-anchor-class'`, `'class-1 class-2'`
 | onClick | Function | | Function executed on click on 'Show more' or 'Show less' | `onClick={this.executeOnClick}`
 | expanded | boolean | 'false' | Control the text to be shown as expanded | `expanded={true}`
@@ -100,5 +101,3 @@ $ npm run compile
              
 [david-dm-url]:https://david-dm.org/devzonetech/react-show-more-text
 [david-dm-image]:https://david-dm.org/devzonetech/react-show-more-text.svg
-[david-dm-dev-url]:https://david-dm.org/devzonetech/react-show-more-text#info=devDependencies
-[david-dm-dev-image]:https://david-dm.org/devzonetech/react-show-more-text/dev-status.svg
