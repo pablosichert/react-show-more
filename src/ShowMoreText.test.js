@@ -41,9 +41,9 @@ describe('Component ShowMoreText', () => {
             </ShowMoreText>
         );
 
-        expect(wrapper.find('[href="#"]').text()).toEqual('Show more');
-        wrapper.find('[href="#"]').simulate('click');
-        expect(wrapper.find('[href="#"]')).toHaveLength(2);
+        expect(wrapper.find('[href=""]').text()).toEqual('Show more');
+        wrapper.find('[href=""]').simulate('click');
+        expect(wrapper.find('[href=""]')).toHaveLength(2);
         expect(wrapper.state()).toEqual({ expanded: true, truncated: false });
     });
 
@@ -100,7 +100,7 @@ describe('Component ShowMoreText', () => {
             </ShowMoreText>
         );
 
-        wrapper.find('[href="#"]').at(0).simulate('click');
+        wrapper.find('[href=""]').at(0).simulate('click');
         expect(checkValue).toEqual(15);
     });
 
@@ -113,4 +113,5 @@ describe('Component ShowMoreText', () => {
 
         expect(wrapper.find('.testClass1').length).toEqual(1);
     });
+
 });
