@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.4.6] - 2020-11-01
+### Fixed
+- [#20](https://github.com/devzonetech/react-show-more-text/issues/20) Incorrect appearance
+
 ## [1.4.5] - 2020-10-20
 ### Fixed
 - [#12](https://github.com/devzonetech/react-show-more-text/issues/12) className prop for the wrapper div of component content
