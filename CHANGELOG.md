@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [1.4.6] - 2020-11-01
 ### Fixed
 - [#20](https://github.com/devzonetech/react-show-more-text/issues/20) Incorrect appearance
+- [#23](https://github.com/devzonetech/react-show-more-text/issues/23) Show more/less anchor breaks in case of hash routers
 
 ## [1.4.5] - 2020-10-20
 ### Fixed
