@@ -103,7 +103,7 @@ class ShowMoreText extends Component {
                         <span>
                             ...{' '}
                             <a
-                                href='#'
+                                href=''
                                 className={anchorClass}
                                 onClick={this.toggleLines}
                             >
@@ -132,7 +132,7 @@ class ShowMoreText extends Component {
                     <span>
                         {' '}
                         <a
-                            href='#'
+                            href=''
                             className={anchorClass}
                             onClick={this.toggleLines}
                         >
