@@ -114,4 +114,25 @@ describe('Component ShowMoreText', () => {
         expect(wrapper.find('.testClass1').length).toEqual(1);
     });
 
+    test('check expanded prop true', () => {
+        const wrapper = mount(
+            <ShowMoreText lines={2} expanded>
+                {testMessage}
+            </ShowMoreText>
+        );
+
+        const state = wrapper.state();
+        expect(state).toEqual({ expanded: true, truncated: false });
+    });
+
+    test('check expanded prop false', () => {
+        const wrapper = mount(
+            <ShowMoreText lines={2} expanded={false}>
+                {testMessage}
+            </ShowMoreText>
+        );
+
+        const state = wrapper.state();
+        expect(state).toEqual({ expanded: false, truncated: false });
+    });
 });
