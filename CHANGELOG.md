@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2021-07-25
+### Added
+- [#31](https://github.com/devzonetech/react-show-more-text/issues/31) Ability to change or remove the ... at the end
+### Fixed
+- Dependencies updated
+
 ## [1.4.6] - 2020-11-01
 ### Fixed
 - [#20](https://github.com/devzonetech/react-show-more-text/issues/20) Incorrect appearance

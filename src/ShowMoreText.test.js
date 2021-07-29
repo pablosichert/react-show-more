@@ -5,21 +5,18 @@ import { mount } from 'enzyme';
 
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-configure ({ adapter: new Adapter() });
+configure({ adapter: new Adapter() });
 
 import ShowMoreText from '../lib/ShowMoreText';
 
 /* global expect */
 
-const testMessage = 'Test Message Lorem ipsum dolor sit amet, <a href="https://www.google.com/">Google link</a> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="https://www.devzonetech.com/">Devzone Tech</a> quis nostrud exercitation.Test Message Lorem ipsum dolor sit amet, <a href="https://www.google.com/">Google link</a> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="https://www.devzonetech.com/">Devzone Tech</a> quis nostrud exercitation.';
+const testMessage =
+    "Test Message Lorem ipsum dolor sit amet, <a href='https://www.google.com/'>Google link</a> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href='https://www.devzonetech.com/'>Devzone Tech</a> quis nostrud exercitation.Test Message Lorem ipsum dolor sit amet, <a href='https://www.google.com/'>Google link</a> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href='https://www.devzonetech.com/'>Devzone Tech</a> quis nostrud exercitation.";
 
 describe('Component ShowMoreText', () => {
     test('check default props', () => {
-        const wrapper = mount(
-            <ShowMoreText>
-                {testMessage}
-            </ShowMoreText>
-        );
+        const wrapper = mount(<ShowMoreText>{testMessage}</ShowMoreText>);
 
         expect(wrapper.find('ShowMoreText').get(0).props).toEqual({
             lines: 3,
@@ -31,7 +28,7 @@ describe('Component ShowMoreText', () => {
             expanded: false,
             width: 0,
             keepNewLines: false,
-            truncatedEndingComponent: '... ',
+            truncatedEndingComponent: '... '
         });
     });
 
@@ -42,9 +39,9 @@ describe('Component ShowMoreText', () => {
             </ShowMoreText>
         );
 
-        expect(wrapper.find('[href=""]').text()).toEqual('Show more');
-        wrapper.find('[href=""]').simulate('click');
-        expect(wrapper.find('[href=""]')).toHaveLength(2);
+        expect(wrapper.find("[href='']").text()).toEqual('Show more');
+        wrapper.find("[href='']").simulate('click');
+        expect(wrapper.find("[href='']")).toHaveLength(2);
         expect(wrapper.state()).toEqual({ expanded: true, truncated: false });
     });
 
@@ -61,7 +58,8 @@ describe('Component ShowMoreText', () => {
 
     test('check keepNewLines functionality', () => {
         // eslint-disable-next-line
-        var msg = "Test Message \n Lorem ipsum dolor sit amet,\n consectetur adipiscing elit, \n test new lines.";
+        var msg =
+            'Test Message \n Lorem ipsum dolor sit amet,\n consectetur adipiscing elit, \n test new lines.';
         const wrapper = mount(
             <ShowMoreText lines={2} keepNewLines={false}>
                 {msg}
@@ -80,12 +78,9 @@ describe('Component ShowMoreText', () => {
 
     test('test width prop', () => {
         const wrapper = mount(
-            <ShowMoreText width={150}>
-                {testMessage}
-            </ShowMoreText>
+            <ShowMoreText width={150}>{testMessage}</ShowMoreText>
         );
 
-        console.log(wrapper.find('ShowMoreText').get(0).props.width);
         expect(wrapper.find('ShowMoreText').get(0).props.width).toEqual(150);
     });
 
@@ -101,15 +96,13 @@ describe('Component ShowMoreText', () => {
             </ShowMoreText>
         );
 
-        wrapper.find('[href=""]').at(0).simulate('click');
+        wrapper.find("[href='']").at(0).simulate('click');
         expect(checkValue).toEqual(15);
     });
 
     test('test anchorClass prop', () => {
         const wrapper = mount(
-            <ShowMoreText anchorClass='testClass1'>
-                {testMessage}
-            </ShowMoreText>
+            <ShowMoreText anchorClass='testClass1'>{testMessage}</ShowMoreText>
         );
 
         expect(wrapper.find('.testClass1').length).toEqual(1);
@@ -135,5 +128,13 @@ describe('Component ShowMoreText', () => {
 
         const state = wrapper.state();
         expect(state).toEqual({ expanded: false, truncated: false });
+    });
+
+    test('test truncatedEndingComponent prop', () => {
+        const wrapper = mount(
+            <ShowMoreText expanded={false} truncatedEndingComponent={'000000'}>{testMessage}</ShowMoreText>
+        );
+
+        expect(wrapper.text().indexOf('000000')).toEqual(1176);
     });
 });
