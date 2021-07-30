@@ -307,7 +307,7 @@ export default class Truncate extends React.Component {
                     lastLineText = lastLineText.substring(0, lastLineText.length - 1);
                 };
 
-                lastLineText = lastLineText.replace(/\[(@)\1{2,}$/, '');
+                lastLineText = lastLineText.replace(/\[@+$/, '');
                 lastLineText = restoreReplacedLinks(lastLineText);
 
                 resultLine = <span>{lastLineText}{ellipsis}</span>;
