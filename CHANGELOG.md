@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [1.5.0] - 2021-07-25
 ### Added
 - [#31](https://github.com/devzonetech/react-show-more-text/issues/31) Ability to change or remove the ... at the end
+- [#25](https://github.com/devzonetech/react-show-more-text/issues/25)Showing [@ at the end 
 ### Fixed
 - Dependencies updated
 
