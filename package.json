@@ -1,6 +1,6 @@
 {
   "name": "react-show-more-text",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "The text surrounded by the component will be truncated. Anything surrounded by the component could be evaluated as text. The component react-show-more-text/ShowMoreText is fork of react-show-more/ShowMore, applied improvements, works with React 16.x.x, added onClick event.",
   "main": "lib/ShowMoreText.js",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "compile": "./node_modules/.bin/babel src/ShowMoreText.js src/Truncate.js --out-dir lib",
-    "compile:watch": "onchange \"src/**/*.js\" -- npm run compile --silent",
+    "compile:watch": "onchange \"src/**/*.js\" -- npm run compile --silent --source-maps",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov",
     "lint": "eslint .",
     "prepublish": "rm -rf ./lib && npm run compile",
