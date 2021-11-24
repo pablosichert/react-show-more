@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.2] - 2021-11-24
+- Maintenance
+
 ## [1.5.1] - 2021-11-24
 - [#34](https://github.com/devzonetech/react-show-more-text/issues/34) Added props expandByClick true/false #34
 
