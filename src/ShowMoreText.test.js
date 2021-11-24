@@ -25,6 +25,7 @@ describe('Component ShowMoreText', () => {
             children: testMessage,
             anchorClass: '',
             onClick: undefined,
+            expandByClick: true,
             expanded: false,
             width: 0,
             keepNewLines: false,
