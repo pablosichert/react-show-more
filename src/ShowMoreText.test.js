@@ -28,7 +28,8 @@ describe('Component ShowMoreText', () => {
             expanded: false,
             width: 0,
             keepNewLines: false,
-            truncatedEndingComponent: '... '
+            truncatedEndingComponent: '... ',
+            expandByClick: true
         });
     });
 

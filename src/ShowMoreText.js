@@ -24,7 +24,8 @@ class ShowMoreText extends Component {
         expanded: false,
         width: 0,
         keepNewLines: false,
-        truncatedEndingComponent: '... '
+        truncatedEndingComponent: '... ',
+        expandByClick: true
     };
 
     static propTypes = {
@@ -38,7 +39,8 @@ class ShowMoreText extends Component {
         expanded: PropTypes.bool,
         width: PropTypes.number,
         keepNewLines: PropTypes.bool,
-        truncatedEndingComponent: PropTypes.node
+        truncatedEndingComponent: PropTypes.node,
+        expandByClick: PropTypes.bool
     };
 
     componentDidMount() {
@@ -68,6 +70,15 @@ class ShowMoreText extends Component {
     toggleLines = event => {
         event.preventDefault();
         var _self = this;
+
+        if (!_self.props.expandByClick) {
+            if (_self.props.onClick) {
+                _self.props.onClick(_self.state.expanded);
+            }
+
+            return;
+        }
+
         if (this._isMounted) {
             this.setState(
                 {
