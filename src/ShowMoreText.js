@@ -73,7 +73,7 @@ class ShowMoreText extends Component {
 
         if (!_self.props.expandByClick) {
             if (_self.props.onClick) {
-                _self.props.onClick(_self.state.expanded);
+                _self.props.onClick(_self.state.expanded, event);
             }
 
             return;
