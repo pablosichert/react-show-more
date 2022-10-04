@@ -1,4 +1,4 @@
-# React Show More Text 1.5.2
+# React Show More Text 1.6.0
 
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
@@ -73,6 +73,12 @@ class Foo extends Component {
         );
     }
 }
+```
+
+## Storybook usage
+
+```
+$ npm run storybook --legacy-peer-deps=true
 ```
 
 ## API

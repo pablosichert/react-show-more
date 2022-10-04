@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - next
+- [#32](https://github.com/devzonetech/react-show-more-text/issues/32) Added event transfer to onClick callback
+- [#43](https://github.com/devzonetech/react-show-more-text/issues/43) Add support to React 18 (React Server Components)
+- Added storybook
+
 ## [1.5.2] - 2021-11-24
 - Maintenance
 
