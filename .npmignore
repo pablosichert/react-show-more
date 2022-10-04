@@ -1,5 +1,6 @@
 example/
 src/
+node_modules/
 .babelrc
 .eslintrc
 .gitignore
@@ -9,3 +10,4 @@ jest.config.js
 README.md
 CHANGELOG.md
 .travis.yml
+.npmrc
