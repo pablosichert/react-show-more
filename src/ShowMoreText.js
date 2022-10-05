@@ -25,7 +25,8 @@ class ShowMoreText extends Component {
         width: 0,
         keepNewLines: false,
         truncatedEndingComponent: '... ',
-        expandByClick: true
+        expandByClick: true,
+        onTruncate: undefined
     };
 
     static propTypes = {
@@ -40,7 +41,8 @@ class ShowMoreText extends Component {
         width: PropTypes.number,
         keepNewLines: PropTypes.bool,
         truncatedEndingComponent: PropTypes.node,
-        expandByClick: PropTypes.bool
+        expandByClick: PropTypes.bool,
+        onTruncate: PropTypes.func
     };
 
     componentDidMount() {
@@ -64,6 +66,7 @@ class ShowMoreText extends Component {
                 truncated
             });
             if (truncated) { this.truncateRef.onResize(); }
+            this.props.onTruncate && this.props.onTruncate();
         }
     };
 
@@ -103,7 +106,8 @@ class ShowMoreText extends Component {
             className,
             width,
             keepNewLines,
-            truncatedEndingComponent
+            truncatedEndingComponent,
+            onTruncate
         } = this.props;
 
         const { expanded, truncated } = this.state;

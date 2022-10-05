@@ -5,7 +5,7 @@
 [![Build status][travis-image]][travis-url]
 [![Dependency status][david-dm-image]][david-dm-url]
 
-The text surrounded by the component will be truncated. Anything surrounded by the component could be evaluated as text. The component react-show-more-text/ShowMoreText is fork of react-show-more/ShowMore, applied improvements, works with React 16.x.x, added onClick event.
+The text surrounded by the component will be truncated. Anything surrounded by the component could be evaluated as text. The component react-show-more-text/ShowMoreText is fork of react-show-more/ShowMore, applied improvements, works with React 16.x.x, React 18.x.x added onClick event.
 
 ## Demo
 
@@ -75,12 +75,6 @@ class Foo extends Component {
 }
 ```
 
-## Storybook usage
-
-```
-$ npm run storybook --legacy-peer-deps=true
-```
-
 ## API
 
 | Prop                     | Type                     | Default     | Description                                                                                                                                                   | Example                                                                                                                       |
@@ -92,11 +86,12 @@ $ npm run storybook --legacy-peer-deps=true
 | className                | string                   | ''          | Class name(s) to add on component content wrapper div.                                                                                                        | `'wrapper-class'`, `'wrapper-class-1 wrapper-class-2'`                                                                        |
 | anchorClass              | string                   | ''          | Class name(s) to add to the anchor elements.                                                                                                                  | `'my-anchor-class'`, `'class-1 class-2'`                                                                                      |
 | onClick                  | Function                 |             | Function executed on click on 'Show more' or 'Show less'                                                                                                      | `onClick={this.executeOnClick}`                                                                                               |
-| expanded                 | boolean                  | 'false'     | Control the text to be shown as expanded                                                                                                                      | `expanded={true}`                                                                                       |
-| expandByClick            | boolean                  | 'true'      | Cancel the default anchor click expand behavior                                                                                                               | `expandByClick={false}`                                                                                                             |
+| expanded                 | boolean                  | 'false'     | Control the text to be shown as expanded                                                                                                                      | `expanded={true}`                                                                                                             |
+| expandByClick            | boolean                  | 'true'      | Cancel the default anchor click expand behavior                                                                                                               | `expandByClick={false}`                                                                                                       |
 | width                    | number                   | `0`         | If not `0`, the calculation of the content will be based on this number.                                                                                      |                                                                                                                               |
 | keepNewLines             | boolean                  | 'false'     | Controls the new lines in text to be kept or not. When set to true, only strings can be passed in as children, and not html nodes.                            | `keepNewLines={true}`                                                                                                         |
 | truncatedEndingComponent | string                   | '...'       | Control the text to be shown at the end of short text                                                                                                         | `truncatedEndingComponent={'... '}`                                                                                           |
+| onTruncate               | Function                 | undefined   | Function executed on click on Truncate                                                                                                                        | `onTruncate={() => {alert('Turncated!')}}`                                                                                    |
 
 ## Developing
 
@@ -122,6 +117,12 @@ Compile to ES5 from /src to /lib
 
 ```
 $ npm run compile
+```
+
+Storybook usage
+
+```
+$ npm run storybook --legacy-peer-deps=true
 ```
 
 [npm-url]: https://npmjs.org/package/react-show-more-text
