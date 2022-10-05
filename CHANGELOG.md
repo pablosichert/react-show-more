@@ -3,10 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## [NEXT]
 
+## [1.6.1] - 2022-10-05
+- [#36](https://github.com/devzonetech/react-show-more-text/issues/36) Added onTruncate callback
+
 ## [1.6.0] - 2022-10-05
 - [#32](https://github.com/devzonetech/react-show-more-text/issues/32) Added event transfer to onClick callback
 - [#43](https://github.com/devzonetech/react-show-more-text/issues/43) Add support to React 18 (React Server Components)
-- [#36](https://github.com/devzonetech/react-show-more-text/issues/36) Added onTruncate callback
 - Added storybook
 
 ## [1.5.2] - 2021-11-24

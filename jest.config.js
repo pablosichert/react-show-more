@@ -6,5 +6,6 @@ module.exports = {
     collectCoverageFrom: [
         '**/src/*test.{js,jsx}'
     ],
-    modulePathIgnorePatterns: ['.example/']
+    modulePathIgnorePatterns: ['.example/'],
+    testEnvironment: 'jsdom'
 };
