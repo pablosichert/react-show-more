@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [NEXT]
 
+## [1.6.2] - 2022-10-11
+### Fixed
+- [#46](https://github.com/devzonetech/react-show-more-text/issues/46) Can't stop propagation
+
 ## [1.6.1] - 2022-10-05
 - [#36](https://github.com/devzonetech/react-show-more-text/issues/36) Added onTruncate callback
 

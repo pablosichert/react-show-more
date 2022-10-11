@@ -1,0 +1,8 @@
+span.show-more-less-clickable {
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+span.show-more-less-clickable:hover{
+    text-decoration:none;
+}

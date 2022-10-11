@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import Truncate from './Truncate';
+import './ShowMoreText.css';
 
 class ShowMoreText extends Component {
 
@@ -19,7 +20,7 @@ class ShowMoreText extends Component {
         lines: 3,
         more: 'Show more',
         less: 'Show less',
-        anchorClass: '',
+        anchorClass: 'show-more-less-clickable',
         onClick: undefined,
         expanded: false,
         width: 0,
@@ -120,13 +121,12 @@ class ShowMoreText extends Component {
                     ellipsis={
                         <span>
                             {truncatedEndingComponent}
-                            <a
-                                href=''
+                            <span
                                 className={anchorClass}
                                 onClick={this.toggleLines}
                             >
                                 {more}
-                            </a>
+                            </span>
                         </span>
                     }
                     onTruncate={this.handleTruncate}
@@ -149,13 +149,12 @@ class ShowMoreText extends Component {
                 {!truncated && expanded && (
                     <span>
                         {' '}
-                        <a
-                            href=''
+                        <span
                             className={anchorClass}
                             onClick={this.toggleLines}
                         >
                             {less}
-                        </a>
+                        </span>
                     </span>
                 )}
             </div>

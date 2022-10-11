@@ -45,7 +45,7 @@ Example.args = {
     more: 'Show more',
     less: 'Show less',
     className: 'content-css',
-    anchorClass: 'my-anchor-css-class',
+    anchorClass: 'show-more-less-clickable',
     onClick: () => {console.log('Executed on click');},
     expanded: false,
     width: 280,

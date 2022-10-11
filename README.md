@@ -1,4 +1,4 @@
-# React Show More Text 1.6.1
+# React Show More Text 1.6.2
 
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
@@ -36,7 +36,7 @@ class Foo extends Component {
                 more="Show more"
                 less="Show less"
                 className="content-css"
-                anchorClass="my-anchor-css-class"
+                anchorClass="show-more-less-clickable"
                 onClick={this.executeOnClick}
                 expanded={false}
                 width={280}
