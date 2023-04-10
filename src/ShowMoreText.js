@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import Truncate from './Truncate';
-import './ShowMoreText.css';
 
 class ShowMoreText extends Component {
 

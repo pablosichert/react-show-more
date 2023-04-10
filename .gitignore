@@ -1,6 +1,6 @@
 .idea
 .nyc_output
-lib
+# lib
 node_modules
 example/node_modules
 *.log
