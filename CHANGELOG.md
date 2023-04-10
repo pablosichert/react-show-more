@@ -7,6 +7,9 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - [#47](https://github.com/devzonetech/react-show-more-text/issues/47) Package doesn't work on Next.js
 
+### Improvement
+- [#51](https://github.com/devzonetech/react-show-more-text/issues/51) Remove babel-polyfill from dependencies? #51
+
 ## [1.6.2] - 2022-10-11
 ### Fixed
 - [#46](https://github.com/devzonetech/react-show-more-text/issues/46) Can't stop propagation
