@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
-import Truncate from './Truncate';
+import React, { Component } from "react";
+import { PropTypes } from "prop-types";
+import Truncate from "./Truncate";
 
 class ShowMoreText extends Component {
-
     _isMounted = false;
 
     constructor(props) {
@@ -11,22 +10,22 @@ class ShowMoreText extends Component {
 
         this.state = {
             expanded: false,
-            truncated: false
+            truncated: false,
         };
     }
 
     static defaultProps = {
         lines: 3,
-        more: 'Show more',
-        less: 'Show less',
-        anchorClass: 'show-more-less-clickable',
+        more: "Show more",
+        less: "Show less",
+        anchorClass: "show-more-less-clickable",
         onClick: undefined,
         expanded: false,
         width: 0,
         keepNewLines: false,
-        truncatedEndingComponent: '... ',
+        truncatedEndingComponent: "... ",
         expandByClick: true,
-        onTruncate: undefined
+        onTruncate: undefined,
     };
 
     static propTypes = {
@@ -42,7 +41,7 @@ class ShowMoreText extends Component {
         keepNewLines: PropTypes.bool,
         truncatedEndingComponent: PropTypes.node,
         expandByClick: PropTypes.bool,
-        onTruncate: PropTypes.func
+        onTruncate: PropTypes.func,
     };
 
     componentDidMount() {
@@ -51,7 +50,7 @@ class ShowMoreText extends Component {
         var _self = this;
         if (this._isMounted) {
             this.setState({
-                expanded: _self.props.expanded
+                expanded: _self.props.expanded,
             });
         }
     }
@@ -60,17 +59,19 @@ class ShowMoreText extends Component {
         this._isMounted = false;
     }
 
-    handleTruncate = truncated => {
+    handleTruncate = (truncated) => {
         if (this._isMounted && truncated !== this.state.truncated) {
             this.setState({
-                truncated
+                truncated,
             });
-            if (truncated) { this.truncateRef.onResize(); }
+            if (truncated) {
+                this.truncateRef.onResize();
+            }
             this.props.onTruncate && this.props.onTruncate();
         }
     };
 
-    toggleLines = event => {
+    toggleLines = (event) => {
         event.preventDefault();
         var _self = this;
 
@@ -85,7 +86,7 @@ class ShowMoreText extends Component {
         if (this._isMounted) {
             this.setState(
                 {
-                    expanded: !this.state.expanded
+                    expanded: !this.state.expanded,
                 },
                 () => {
                     if (_self.props.onClick) {
@@ -107,7 +108,7 @@ class ShowMoreText extends Component {
             width,
             keepNewLines,
             truncatedEndingComponent,
-            onTruncate
+            onTruncate,
         } = this.props;
 
         const { expanded, truncated } = this.state;
@@ -129,25 +130,23 @@ class ShowMoreText extends Component {
                         </span>
                     }
                     onTruncate={this.handleTruncate}
-                    ref={ref => (this.truncateRef = ref)}
+                    ref={(ref) => (this.truncateRef = ref)}
                 >
-                    {keepNewLines ?
-                        children.split('\n').map((line, i, arr) => {
-                            line = <span key={i}>{line}</span>;
+                    {keepNewLines
+                        ? children.split("\n").map((line, i, arr) => {
+                              line = <span key={i}>{line}</span>;
 
-                            if (i === arr.length - 1) {
-                                return line;
-                            } else {
-                                return [line, <br key={i + 'br'} />];
-                            }
-                        }
-                        )
-                        : children
-                    }
+                              if (i === arr.length - 1) {
+                                  return line;
+                              } else {
+                                  return [line, <br key={i + "br"} />];
+                              }
+                          })
+                        : children}
                 </Truncate>
                 {!truncated && expanded && (
                     <span>
-                        {' '}
+                        {" "}
                         <span
                             className={anchorClass}
                             onClick={this.toggleLines}

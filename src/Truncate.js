@@ -17,8 +17,8 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 // Initial version of react-truncate module (v2.4.0)
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export default class Truncate extends React.Component {
     static propTypes = {
@@ -26,19 +26,19 @@ export default class Truncate extends React.Component {
         ellipsis: PropTypes.node,
         lines: PropTypes.oneOfType([
             PropTypes.oneOf([false]),
-            PropTypes.number
+            PropTypes.number,
         ]),
         trimWhitespace: PropTypes.bool,
         width: PropTypes.number,
-        onTruncate: PropTypes.func
+        onTruncate: PropTypes.func,
     };
 
     static defaultProps = {
-        children: '',
-        ellipsis: '…',
+        children: "",
+        ellipsis: "…",
         lines: 1,
         trimWhitespace: false,
-        width: 0
+        width: 0,
     };
 
     state = {};
@@ -52,15 +52,13 @@ export default class Truncate extends React.Component {
 
     componentDidMount() {
         const {
-            elements: {
-                text
-            },
+            elements: { text },
             calcTargetWidth,
-            onResize
+            onResize,
         } = this;
 
-        const canvas = document.createElement('canvas');
-        this.canvasContext = canvas.getContext('2d');
+        const canvas = document.createElement("canvas");
+        this.canvasContext = canvas.getContext("2d");
 
         calcTargetWidth(() => {
             // Node not needed in document tree to read its content
@@ -69,7 +67,7 @@ export default class Truncate extends React.Component {
             }
         });
 
-        window.addEventListener('resize', onResize);
+        window.addEventListener("resize", onResize);
     }
 
     componentDidUpdate(prevProps) {
@@ -86,92 +84,92 @@ export default class Truncate extends React.Component {
 
     componentWillUnmount() {
         const {
-            elements: {
-                ellipsis
-            },
+            elements: { ellipsis },
             onResize,
-            timeout
+            timeout,
         } = this;
 
-        if(ellipsis.parentNode) {
+        if (ellipsis.parentNode) {
             ellipsis.parentNode.removeChild(ellipsis);
         }
 
-        window.removeEventListener('resize', onResize);
+        window.removeEventListener("resize", onResize);
 
         window.cancelAnimationFrame(timeout);
     }
 
     extractReplaceLinksKeys = (content) => {
-        var _self = this, i = 0;
+        var _self = this,
+            i = 0;
         this.replacedLinks = [];
 
-        content.replace(/(<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>)/g, function () {
-            const item = Array.prototype.slice.call(arguments, 1, 4);
-            item.key = '[' + '@'.repeat(item[2].length - 1) + '=' + i++ + ']';
-            _self.replacedLinks.push(item);
+        content.replace(
+            /(<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>)/g,
+            function () {
+                const item = Array.prototype.slice.call(arguments, 1, 4);
+                item.key =
+                    "[" + "@".repeat(item[2].length - 1) + "=" + i++ + "]";
+                _self.replacedLinks.push(item);
 
-            content = content.replace(item[0], item.key);
-        });
+                content = content.replace(item[0], item.key);
+            }
+        );
 
         return content;
-    }
+    };
 
     restoreReplacedLinks = (content) => {
-        this.replacedLinks.forEach(item => {
+        this.replacedLinks.forEach((item) => {
             content = content.replace(item.key, item[0]);
         });
 
         return this.createMarkup(content);
-    }
+    };
 
     // Shim innerText to consistently break lines at <br/> but not at \n
     innerText = (node) => {
-        const div = document.createElement('div');
-        const contentKey = 'innerText' in window.HTMLElement.prototype ? 'innerText' : 'textContent';
+        const div = document.createElement("div");
+        const contentKey =
+            "innerText" in window.HTMLElement.prototype
+                ? "innerText"
+                : "textContent";
 
-        const content = node.innerHTML.replace(/\r\n|\r|\n/g, ' ');
+        const content = node.innerHTML.replace(/\r\n|\r|\n/g, " ");
         div.innerHTML = this.extractReplaceLinksKeys(content);
 
         let text = div[contentKey];
 
-        const test = document.createElement('div');
-        test.innerHTML = 'foo<br/>bar';
+        const test = document.createElement("div");
+        test.innerHTML = "foo<br/>bar";
 
-        if (test[contentKey].replace(/\r\n|\r/g, '\n') !== 'foo\nbar') {
-            div.innerHTML = div.innerHTML.replace(/<br.*?[\/]?>/gi, '\n');
+        if (test[contentKey].replace(/\r\n|\r/g, "\n") !== "foo\nbar") {
+            div.innerHTML = div.innerHTML.replace(/<br.*?[\/]?>/gi, "\n");
             text = div[contentKey];
         }
 
         return text;
-    }
+    };
 
     onResize = () => {
         this.calcTargetWidth();
-    }
+    };
 
     onTruncate = (didTruncate) => {
-        const {
-            onTruncate
-        } = this.props;
+        const { onTruncate } = this.props;
 
-        if (typeof onTruncate === 'function') {
+        if (typeof onTruncate === "function") {
             this.timeout = window.requestAnimationFrame(() => {
                 onTruncate(didTruncate);
             });
         }
-    }
+    };
 
     calcTargetWidth = (callback) => {
         const {
-            elements: {
-                target
-            },
+            elements: { target },
             calcTargetWidth,
             canvasContext,
-            props: {
-                width
-            }
+            props: { width },
         } = this;
 
         // Calculation is no longer relevant, since node has been removed
@@ -179,72 +177,70 @@ export default class Truncate extends React.Component {
             return;
         }
 
-        const targetWidth = (
+        const targetWidth =
             width ||
             // Floor the result to deal with browser subpixel precision
-            Math.floor(target.parentNode.getBoundingClientRect().width)
-        );
+            Math.floor(target.parentNode.getBoundingClientRect().width);
 
         // Delay calculation until parent node is inserted to the document
         // Mounting order in React is ChildComponent, ParentComponent
         if (!targetWidth) {
-            return window.requestAnimationFrame(() => calcTargetWidth(callback));
+            return window.requestAnimationFrame(() =>
+                calcTargetWidth(callback)
+            );
         }
 
         const style = window.getComputedStyle(target);
 
         const font = [
-            style['font-weight'],
-            style['font-style'],
-            style['font-size'],
-            style['font-family']
-        ].join(' ');
+            style["font-weight"],
+            style["font-style"],
+            style["font-size"],
+            style["font-family"],
+        ].join(" ");
 
         canvasContext.font = font;
 
-        this.setState({
-            targetWidth
-        }, callback);
-    }
+        this.setState(
+            {
+                targetWidth,
+            },
+            callback
+        );
+    };
 
     measureWidth = (text) => {
         return this.canvasContext.measureText(text).width;
-    }
+    };
 
     ellipsisWidth = (node) => {
         return node.offsetWidth;
-    }
+    };
 
     trimRight = (text) => {
-        return text.replace(/\s+$/, '');
-    }
+        return text.replace(/\s+$/, "");
+    };
 
     createMarkup = (str) => {
-        return <span dangerouslySetInnerHTML={{__html: str}} />;
-    }
+        return <span dangerouslySetInnerHTML={{ __html: str }} />;
+    };
 
     getLines = () => {
         const {
             elements,
-            props: {
-                lines: numLines,
-                ellipsis,
-                trimWhitespace
-            },
-            state: {
-                targetWidth
-            },
+            props: { lines: numLines, ellipsis, trimWhitespace },
+            state: { targetWidth },
             innerText,
             measureWidth,
             onTruncate,
             trimRight,
             renderLine,
-            restoreReplacedLinks
+            restoreReplacedLinks,
         } = this;
 
         const lines = [];
         const text = innerText(elements.text);
-        const textLines = text.split('\n').map(line => line.split(' '));
+        const textLines = text.split("\n").map((line) => line.split(" "));
         let didTruncate = true;
         const ellipsisWidth = this.ellipsisWidth(this.elements.ellipsis);
 
@@ -259,7 +255,7 @@ export default class Truncate extends React.Component {
                 continue;
             }
 
-            let resultLine = textWords.join(' ');
+            let resultLine = textWords.join(" ");
 
             if (measureWidth(resultLine) <= targetWidth) {
                 if (textLines.length === 1) {
@@ -275,7 +271,7 @@ export default class Truncate extends React.Component {
 
             if (line === numLines) {
                 // Binary search determining the longest possible line inluding truncate string
-                const textRest = textWords.join(' ');
+                const textRest = textWords.join(" ");
 
                 let lower = 0;
                 let upper = textRest.length - 1;
@@ -305,14 +301,22 @@ export default class Truncate extends React.Component {
                     }
                 }
 
-                if (lastLineText.substr(lastLineText.length - 2) === '][') {
-                    lastLineText = lastLineText.substring(0, lastLineText.length - 1);
-                };
+                if (lastLineText.substr(lastLineText.length - 2) === "][") {
+                    lastLineText = lastLineText.substring(
+                        0,
+                        lastLineText.length - 1
+                    );
+                }
 
-                lastLineText = lastLineText.replace(/\[@+$/, '');
+                lastLineText = lastLineText.replace(/\[@+$/, "");
                 lastLineText = restoreReplacedLinks(lastLineText);
 
-                resultLine = <span>{lastLineText}{ellipsis}</span>;
+                resultLine = (
+                    <span>
+                        {lastLineText}
+                        {ellipsis}
+                    </span>
+                );
             } else {
                 // Binary search determining when the line breaks
                 let lower = 0;
@@ -321,7 +325,7 @@ export default class Truncate extends React.Component {
                 while (lower <= upper) {
                     const middle = Math.floor((lower + upper) / 2);
 
-                    const testLine = textWords.slice(0, middle + 1).join(' ');
+                    const testLine = textWords.slice(0, middle + 1).join(" ");
 
                     if (measureWidth(testLine) <= targetWidth) {
                         lower = middle + 1;
@@ -337,7 +341,7 @@ export default class Truncate extends React.Component {
                     continue;
                 }
 
-                resultLine = textWords.slice(0, lower).join(' ');
+                resultLine = textWords.slice(0, lower).join(" ");
 
                 resultLine = restoreReplacedLinks(resultLine);
 
@@ -350,48 +354,36 @@ export default class Truncate extends React.Component {
         onTruncate(didTruncate);
 
         return lines.map(renderLine);
-    }
+    };
 
     renderLine = (line, i, arr) => {
         if (i === arr.length - 1) {
             return <span key={i}>{line}</span>;
         } else {
-            const br = <br key={i + 'br'} />;
+            const br = <br key={i + "br"} />;
 
             if (line) {
-                return [
-                    <span key={i}>{line}</span>,
-                    br
-                ];
+                return [<span key={i}>{line}</span>, br];
             } else {
                 return br;
             }
         }
-    }
+    };
 
     render() {
         const {
-            elements: {
-                target
-            },
-            props: {
-                children,
-                ellipsis,
-                lines,
-                ...spanProps
-            },
-            state: {
-                targetWidth
-            },
+            elements: { target },
+            props: { children, ellipsis, lines, ...spanProps },
+            state: { targetWidth },
             getLines,
-            onTruncate
+            onTruncate,
         } = this;
 
         let text;
 
         const mounted = !!(target && targetWidth);
 
-        if (typeof window !== 'undefined' && mounted) {
+        if (typeof window !== "undefined" && mounted) {
             if (lines > 0) {
                 text = getLines();
             } else {
@@ -405,10 +397,33 @@ export default class Truncate extends React.Component {
         delete spanProps.trimWhitespace;
 
         return (
-            <span {...spanProps} ref={(targetEl) => { this.elements.target = targetEl; }}>
-                <span style={{display: 'block', maxWidth: `${spanProps.width}px`}}>{text}</span>
-                <span ref={(textEl) => { this.elements.text = textEl; }}>{children}</span>
-                <span ref={(ellipsisEl) => { this.elements.ellipsis = ellipsisEl; }} style={this.styles.ellipsis}>
+            <span
+                {...spanProps}
+                ref={(targetEl) => {
+                    this.elements.target = targetEl;
+                }}
+            >
+                <span
+                    style={{
+                        display: "block",
+                        maxWidth: `${spanProps.width}px`,
+                    }}
+                >
+                    {text}
+                </span>
+                <span
+                    ref={(textEl) => {
+                        this.elements.text = textEl;
+                    }}
+                >
+                    {children}
+                </span>
+                <span
+                    ref={(ellipsisEl) => {
+                        this.elements.ellipsis = ellipsisEl;
+                    }}
+                    style={this.styles.ellipsis}
+                >
                     {ellipsis}
                 </span>
             </span>
@@ -417,10 +432,10 @@ export default class Truncate extends React.Component {
 
     styles = {
         ellipsis: {
-            position: 'fixed',
-            visibility: 'hidden',
+            position: "fixed",
+            visibility: "hidden",
             top: 0,
-            left: 0
-        }
+            left: 0,
+        },
     };
-};
+}
