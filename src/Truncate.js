@@ -406,7 +406,7 @@ export default class Truncate extends React.Component {
                 <span
                     style={{
                         display: "block",
-                        maxWidth: `${spanProps.width}px`,
+                        maxWidth: spanProps.width > 0 ? `${spanProps.width}px` : "unset",
                     }}
                 >
                     {text}
