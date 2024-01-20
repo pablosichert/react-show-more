@@ -53,22 +53,22 @@ class ShowMore extends Component {
             truncated
         } = this.state;
 
-        const ancorElementMore = isValidElement(more) ? React.cloneElement(more, { onClick : this.toggleLines }) : <a href='#' className={anchorClass} onClick={this.toggleLines}>{more}</a>;
-        const ancorElementLess = isValidElement(less) ? React.cloneElement(less, { onClick : this.toggleLines }) : <a href='#' className={anchorClass} onClick={this.toggleLines}>{less}</a>;
+        const anchorElementMore = isValidElement(more) ? React.cloneElement(more, { onClick : this.toggleLines }) : <a href='#' className={anchorClass} onClick={this.toggleLines}>{more}</a>;
+        const anchorElementLess = isValidElement(less) ? React.cloneElement(less, { onClick : this.toggleLines }) : <a href='#' className={anchorClass} onClick={this.toggleLines}>{less}</a>;
 
         return (
             <div>
                 <Truncate
                     lines={!expanded && lines}
                     ellipsis={(
-                        <span><span>...</span> { ancorElementMore }</span>
+                        <span><span>...</span> { anchorElementMore }</span>
                     )}
                     onTruncate={this.handleTruncate}
                 >
                     {children}
                 </Truncate>
                 {!truncated && expanded && (
-                    <span> { ancorElementLess }</span>
+                    <span> { anchorElementLess }</span>
                 )}
             </div>
         );
