@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import Truncate from 'react-truncate';
 
@@ -53,19 +53,22 @@ class ShowMore extends Component {
             truncated
         } = this.state;
 
+        const ancorElementMore = isValidElement(more) ? React.cloneElement(more, { onClick : this.toggleLines }) : <a href='#' className={anchorClass} onClick={this.toggleLines}>{more}</a>;
+        const ancorElementLess = isValidElement(less) ? React.cloneElement(less, { onClick : this.toggleLines }) : <a href='#' className={anchorClass} onClick={this.toggleLines}>{less}</a>;
+
         return (
             <div>
                 <Truncate
                     lines={!expanded && lines}
                     ellipsis={(
-                        <span>... <a href='#' className={anchorClass} onClick={this.toggleLines}>{more}</a></span>
+                        <span><span>...</span> { ancorElementMore }</span>
                     )}
                     onTruncate={this.handleTruncate}
                 >
                     {children}
                 </Truncate>
                 {!truncated && expanded && (
-                    <span> <a href='#' className={anchorClass} onClick={this.toggleLines}>{less}</a></span>
+                    <span> { ancorElementLess }</span>
                 )}
             </div>
         );
